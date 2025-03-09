@@ -3,6 +3,7 @@
 
 # Node.js
 node_modules
+npm_start
 pnpm-lock.yaml
 yarn.lock
 
