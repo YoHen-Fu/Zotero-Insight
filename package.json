@@ -1,24 +1,24 @@
 {
-  "name": "zotero-plugin-template",
+  "name": "zotero-insight",
   "type": "module",
-  "version": "3.0.4",
-  "description": "Zotero Plugin Template",
+  "version": "dev-init",
+  "description": "My Zotero Plugin",
   "config": {
-    "addonName": "Zotero Plugin Template",
-    "addonID": "addontemplate@euclpts.com",
-    "addonRef": "addontemplate",
-    "addonInstance": "AddonTemplate",
-    "prefsPrefix": "extensions.zotero.addontemplate"
+    "addonName": "Zotero Insight",
+    "addonID": "alittlefu@163.com",
+    "addonRef": "addonInsight",
+    "addonInstance": "AddonInsight",
+    "prefsPrefix": "extensions.zotero.Insight"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/windingwind/zotero-plugin-template.git"
+    "url": "git+https://gitee.com/YoHen-Fu/Zotero-Insight.git"
   },
-  "author": "windingwind",
+  "author": "YoHen-Fu",
   "bugs": {
-    "url": "https://github.com/windingwind/zotero-plugin-template/issues"
+    "url": "https://gitee.com/YoHen-Fu/Zotero-Insight/issues"
   },
-  "homepage": "https://github.com/windingwind/zotero-plugin-template#readme",
+  "homepage": "https://gitee.com/YoHen-Fu/Zotero-Insight",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "start": "zotero-plugin serve",
