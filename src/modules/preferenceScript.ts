@@ -21,7 +21,7 @@ export async function registerPrefsScripts(_window: Window) {
       ],
       rows: [
         {
-          title: "Orange",
+          title: "Orange1",
           detail: "It's juicy",
         },
         {
