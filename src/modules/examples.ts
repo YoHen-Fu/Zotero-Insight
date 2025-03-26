@@ -162,9 +162,14 @@ export class UIExampleFactory {
             label: getString("menuitem-submenulabel"),
             oncommand: "alert('Hello World! Sub Menuitem.')",
           },
+          {
+            tag: "menuitem",
+            label: getString("menuitem-submenulabel"),
+            oncommand: "alert('Hello World! Sub Menuitem.')",
+          },
         ],
       },
-      "before",
+      "after",
       win.document.querySelector(
         "#zotero-itemmenu-addontemplate-test",
       ) as XUL.MenuItem,
@@ -233,12 +238,15 @@ export class UIExampleFactory {
       },
       position: "afterCreators",
       onGetData: ({ item }) => {
+        ztoolkit.log("notify", item);
         return item.getField("title");
+
       },
       onSetData: ({ item, value }) => {
         item.setField("title", value);
       },
     });
+
   }
 
   @example
@@ -594,7 +602,7 @@ export class PromptExampleFactory {
 }
 
 export class HelperExampleFactory {
-  @example
+  // @example
   static async dialogExample() {
     const dialogData: { [key: string | number]: any } = {
       inputValue: "test",
@@ -828,10 +836,6 @@ export class HelperExampleFactory {
       .addText(
         "![Plugin Template](https://github.com/windingwind/zotero-plugin-template)",
         "text/unicode",
-      )
-      .addText(
-        '<a href="https://github.com/windingwind/zotero-plugin-template">Plugin Template</a>',
-        "text/html",
       )
       .copy();
     ztoolkit.getGlobal("alert")("Copied!");

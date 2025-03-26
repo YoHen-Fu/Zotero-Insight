@@ -20,23 +20,23 @@ async function onStartup() {
 
   BasicExampleFactory.registerPrefs();
 
-  BasicExampleFactory.registerNotifier();
+  // BasicExampleFactory.registerNotifier();
 
-  KeyExampleFactory.registerShortcuts();
+  // KeyExampleFactory.registerShortcuts();
 
-  await UIExampleFactory.registerExtraColumn();
+  // await UIExampleFactory.registerExtraColumn();
 
-  await UIExampleFactory.registerExtraColumnWithCustomCell();
+  // await UIExampleFactory.registerExtraColumnWithCustomCell();
 
-  UIExampleFactory.registerItemPaneCustomInfoRow();
+  // UIExampleFactory.registerItemPaneCustomInfoRow();
 
-  UIExampleFactory.registerItemPaneSection();
+  // UIExampleFactory.registerItemPaneSection();
 
-  UIExampleFactory.registerReaderItemPaneSection();
+  // UIExampleFactory.registerReaderItemPaneSection();
 
-  await Promise.all(
-    Zotero.getMainWindows().map((win) => onMainWindowLoad(win)),
-  );
+  // await Promise.all(
+  //   Zotero.getMainWindows().map((win) => onMainWindowLoad(win)),
+  // );
 }
 
 async function onMainWindowLoad(win: Window): Promise<void> {
@@ -72,6 +72,12 @@ async function onMainWindowLoad(win: Window): Promise<void> {
   UIExampleFactory.registerRightClickMenuPopup(win);
 
   UIExampleFactory.registerWindowMenuWithSeparator();
+
+  await Zotero.Promise.delay(1000);
+  popupWin.changeLine({
+    progress: 50,
+    text: `[50%] ${getString("startup-begin")}`,
+  });
 
   PromptExampleFactory.registerNormalCommandExample();
 
@@ -120,6 +126,12 @@ async function onNotify(
     event == "select" &&
     type == "tab" &&
     extraData[ids[0]].type == "reader"
+  ) {
+    BasicExampleFactory.exampleNotifierCallback();
+  } else if (
+    event == "select" &&
+    type == "tab" &&
+    extraData[ids[0]].type == "library"
   ) {
     BasicExampleFactory.exampleNotifierCallback();
   } else {
