@@ -1,6 +1,6 @@
-pref-title = Addon Template Example
-pref-enable =
-    .label = Enable
-pref-input = Input
+
+
+
+pref-about = About
 pref-codeRep = code repository
-pref-help = { $name } Build { $version } { $time }
+pref-help = { $version } bulid on { $time }
