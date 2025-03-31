@@ -121,7 +121,35 @@ export class KeyExampleFactory {
   }
 }
 
+async function onShowTable() {
+  // const windowArgs = {
+  //   _initPromise: Zotero.Promise.defer(),
+  // };
+  // const win = Zotero.getMainWindow().openDialog(
+  //   rootURI + `content/preferences.xhtml`,
+  //   "_blank",
+  //   "chrome,centerscreen,resizable",
+  //   windowArgs,
+  // );
+  // await windowArgs._initPromise.promise;
+
+}
+
+export async function onPrefsWindowLoad(win: Window) {
+  const doc = win.document;
+  const element = doc.getElementById(`translator-table`);
+
+  if (element) {
+    element.addEventListener("click", async (event) => {
+      Zotero.log(`translator-table`);
+    });
+  } else {
+    Zotero.log(`Element with id #zotero-prefpane-open-translator-table not found.`);
+  }
+}
+
 export class UIExampleFactory {
+
   @example
   static registerStyleSheet(win: Window) {
     const doc = win.document;
